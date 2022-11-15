@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :restaurants do
     collection do
       get :top
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :chef
     end
+    resources :reviews, only: [:new, :create]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
